@@ -8,6 +8,7 @@ Author URL: http://webthemez.com
 **************************/
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 body {
   padding-top: 100px;
