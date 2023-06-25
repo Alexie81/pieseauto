@@ -1,10 +1,10 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
-	<section class="navigation">
+  <section class="navigation">
   <div class="nav-container">
     <div class="brand">
       <a href="#!">Admin</a>
@@ -13,10 +13,10 @@
       <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
       <ul class="nav-list">
         <li>
-          <a href="#!">Noi</a>
+          <a href="index.php">Noi</a>
         </li>
         <li>
-          <a href="old.php">Raspunse</a>
+          <a href="#!">Raspunse</a>
         </li>
       </ul>
     </nav>
@@ -44,7 +44,7 @@ $used = false;
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    if($row["status"] !== "old"){
+    if($row["status"] !== "new"){
       echo "<li style='--i: ".$row["id"]."'  data-id=".$row["id"]." data-email=".$row["email"]." data-name=".$row["nume"].">
     <h3>".$row["nume"]."</h3>
     <p>Email: ".$row["email"]."</p>
@@ -53,11 +53,11 @@ if ($result->num_rows > 0) {
     <p>Data: ".$row["data"]."</p>
     <p>Ora: ".$row["ora"]."</p>
     <p>Talon: <a href='../../uploads/".$row["filename"]."'>Vezi imagine</a></p>
-    <button onclick='sendMessage(".$row["id"].", `".$row['email']."`, `".$row['nume']."`, `".$row['filename']."`)' class='raspunde' >Raspunde</button>
+    <p>RASPUNS - VEZI EMAIL</p>
   </li>";
 } else {
   if(!$used){
-    echo "<h3 style='position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);'>Nu ai niciun email nou!</h3>";
+    echo "<h3 style='position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);'>Nu exista email-uri!</h3>";
     $used = true;
   }
 }
