@@ -116,3 +116,13 @@ jQuery(function($) {
  
 
 });
+
+// document.getElementById('contact_form').addEventListener('submit', function(e) {
+//     let name = document.getElementById("name").value();
+//     let email = document.getElementById("email").value();
+//     let phone = document.getElementById("phone").value();
+//     let talon = document.getElementById("talon").value();
+//     let message = document.getElementById("message").value();
+
+//     console.log({name, email, phone, talon, message});
+// })
